@@ -55,7 +55,7 @@ songs.delete("/:id", async (req,res) => {
 
 songs.put("/:id", async (req,res) => {
   const  { id } = req.params;
-  const updatedMovie = await updatedSong(id, req.body);
+  const updatedMovie = await updateSong(id, req.body);
   if (updatedSong.id) {
     res.status(200).json(updatedMovie);
   } else {
