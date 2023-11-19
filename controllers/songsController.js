@@ -10,7 +10,7 @@ const {
 const songs = express.Router();
 
 songs.use("/:id", async (req,res) => {
-  const { id } = req.paramsl
+  const { id } = req.params
   const oneSong = await getOneSong(id);
   if (oneSong) {
     res.json(oneSong);
