@@ -15,4 +15,6 @@ app.get("*", (req,res) => {
   res.status(404).json({ sucess: false, data: {error: "page not found"}});
 });
 
+
+
 module.exports = app;
