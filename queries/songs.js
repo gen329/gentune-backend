@@ -21,8 +21,8 @@ const getOneSong = async (id) => {
 const createSong = async (song) => {
   try {
     const createdSong = await db.one(
-      "INSERT INTO songs (title, artist_name, album, year_of_release, genre, is_favorite) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
-      [song.title, song.artist, song.album, song.year, song.genre, song.is_favorite]
+      "INSERT INTO songs (title, artist_name, album, year_of_release, genre) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      [song.title, song.artist, song.album, song.year, song.genre]
     );
     return createdSong;
   } catch (error) {
@@ -32,7 +32,7 @@ const createSong = async (song) => {
 
 const deleteSong = async (id) => {
   try {
-    const deletedSong = await db.one("DELETE from movies WHERE id =$1 RETURNING *", id)
+    const deletedSong = await db.one("DELETE from songs WHERE id =$1 RETURNING *", id)
     return deletedSong
   } catch(error) {
     return { error: "Song not deleted!"}
