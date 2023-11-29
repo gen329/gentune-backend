@@ -24,7 +24,7 @@ songs.get("/", async (req,res) => {
   if (allSongs[0]) {
     res.status(200).json({ sucess: true, data: {payload: allSongs} });
   } else {
-    res.status(500).json({ sucess: false, data: { error: "SEVER ERROR - Can't get all movies!" },
+    res.status(500).json({ sucess: false, data: { error: "SEVER ERROR - Can't get all songs!" },
   });
   }
 });
