@@ -8,27 +8,27 @@ function checkTitle(req, res, next) {
 }
 
 function checkArtistName(req, res, next) {
-  const { description } = req.body;
+  const { artist_name } = req.body;
 
-  if(typeof description != 'string' || description.trim() === ''){
-    return res.status(400).json({error: 'Description is required and must be a non-empty string'});
+  if (typeof artist_name !== 'string' || artist_name.trim() === '') {
+    return res.status(400).json({ error: 'Artist name is required and must be a non-empty string' });
   }
   next();
 }
 
 function checkGenres(req, res, next) {
-  const validGenres = [ "R&B", "Hip-Hop", "Pop", "Salsa", "Urbano Latino", "Afrobeats", "Hip-Hop/Rap"];
+  const validGenres = ["R&B", "Hip-Hop", "Pop", "Salsa", "Urbano Latino", "Afrobeats", "Hip-Hop/Rap"];
   const { genres } = req.body;
 
-  if(!Array.isArray(genres)) {
-    return res.status(400).json({error: 'Genres must be provided as an array'});
+  if (!Array.isArray(genres)) {
+    return res.status(400).json({ error: 'Genres must be provided as an array' });
   }
 
-  for (const genre of genres) {
-    if (!validGenres.includes(genre)) {
-      return res.status(400).json({ error: `${genre} is not a valid genre` });
-    }
+  const invalidGenres = genres.filter(genre => !validGenres.includes(genre));
+  if (invalidGenres.length > 0) {
+    return res.status(400).json({ error: `${invalidGenres.join(', ')} are not valid genres` });
   }
+
   next();
 }
 
