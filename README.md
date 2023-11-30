@@ -21,14 +21,14 @@ Ensure you have Node.js and npm installed on your system.
 
 *API Endpoints*
 The backend server provides the following API endpoints:
-GET /api/songs: Retrieve all songs.
-POST /api/songs: Add a new song.
-GET /api/songs/:id: Get a specific song by ID.
-PUT /api/songs/:id: Update a song by ID.
-DELETE /api/songs/:id: Delete a song by ID.
-(Add any other relevant endpoints)
-Contributing
+- GET /api/songs: Retrieve all songs.
+- POST /api/songs: Add a new song.
+- GET /api/songs/:id: Get a specific song by ID.
+- PUT /api/songs/:id: Update a song by ID.
+- DELETE /api/songs/:id: Delete a song by ID.
 
+
+*Contributing*
 We welcome contributions! Feel free to submit pull requests or open issues for any improvements, bug fixes, or additional features.
 
 Credits
