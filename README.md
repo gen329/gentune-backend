@@ -33,3 +33,8 @@ We welcome contributions! Feel free to submit pull requests or open issues for a
 
 Credits
 This backend server for GenTune is built using Node.js and Express.js.
+
+Links:
+- Netlify Link: https://teal-paletas-20adef.netlify.app
+- Github FrontEnd:https://github.com/gen329/gentune-frontend
+- Github BackEnd: https://github.com/gen329/gentune-backend
